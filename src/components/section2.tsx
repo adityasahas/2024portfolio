@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Image, Progress, Link } from "@nextui-org/react";
-
+import { FaGithub } from "react-icons/fa";
+import { SiSpotify } from "react-icons/si";
 export default function NameAndGitandSpotify() {
   const [commit, setCommit] = useState(null);
   const [playbackState, setPlaybackState] = useState(null);
@@ -76,7 +77,10 @@ export default function NameAndGitandSpotify() {
 
         <div className="flex flex-col md:w-1/2 w-full gap-8">
           <div className="bg-[#131315] rounded-3xl p-6 md:col-span-1">
-            <h2 className="text-white text-lg">GitHub</h2>
+            <div className="flex items-center">
+              <FaGithub size={40} color="#8A8A93" />
+              <h2 className="text-white text-lg ml-4">GitHub </h2>
+            </div>
             <p className="text-[#8A8A93] mt-2">
               Latest commit in{" "}
               {commit && commit.repoVisibility === "private" ? (
@@ -113,7 +117,12 @@ export default function NameAndGitandSpotify() {
           </div>
 
           <div className="bg-[#131315] rounded-3xl p-6 md:col-span-1">
-            <h2 className="text-white text-lg">Spotify</h2>
+            <div className="flex items-center">
+              <SiSpotify size={40} color="#8A8A93" />
+              <h2 className="text-white text-lg ml-4">
+                Spotify Currently Playing{" "}
+              </h2>
+            </div>
             {playbackState && playbackState.item ? (
               <div className="mt-2">
                 <div className="flex items-center">
