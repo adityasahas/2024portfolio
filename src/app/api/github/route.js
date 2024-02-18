@@ -17,27 +17,24 @@ export async function GET(req, res) {
 
   const commitsData = await commitsResponse.json();
 
-  if (commitsData.items && commitsData.items.length > 0) {
-    const latestCommit = commitsData.items[0];
+  const latestCommit = commitsData.items[0];
 
-    const repoResponse = await fetch(latestCommit.repository.url, {
-      headers: {
-        Authorization: `token ${token}`,
-        Accept: "application/vnd.github.v3+json",
-      },
-    });
-    const repoData = await repoResponse.json();
-    const response = {
-      commitMessage: latestCommit.commit.message,
-      commitUrl: latestCommit.html_url,
-      repoName: repoData.name,
-      repoUrl: repoData.html_url,
-      repoStars: repoData.stargazers_count,
-      commitDate: latestCommit.commit.author.date,
-      repoVisibility: repoData.visibility,
-    };
+  const repoResponse = await fetch(latestCommit.repository.url, {
+    headers: {
+      Authorization: `token ${token}`,
+      Accept: "application/vnd.github.v3+json",
+    },
+  });
+  const repoData = await repoResponse.json();
+  const response = {
+    commitMessage: latestCommit.commit.message,
+    commitUrl: latestCommit.html_url,
+    repoName: repoData.name,
+    repoUrl: repoData.html_url,
+    repoStars: repoData.stargazers_count,
+    commitDate: latestCommit.commit.author.date,
+    repoVisibility: repoData.visibility,
+  };
 
-    return NextResponse.json(response);
-  }
-  return null;
+  return NextResponse.json(response);
 }
