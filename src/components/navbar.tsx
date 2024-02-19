@@ -9,7 +9,10 @@ const Navbar = () => {
         </Link>
 
         <div className="flex space-x-4">
-          <Link href="/home" className=" text-white py-2 px-4 rounded-lg ">
+          <Link
+            href="/home"
+            className=" text-white py-2 px-4 rounded-lg hidden md:flex"
+          >
             Home.
           </Link>
           <Link
@@ -18,7 +21,10 @@ const Navbar = () => {
           >
             Works.
           </Link>
-          <Link href="/contact" className=" text-white py-2 px-4 rounded-lg">
+          <Link
+            href="/contact"
+            className=" text-white py-2 px-4 rounded-lg hidden md:flex"
+          >
             Contact.
           </Link>{" "}
         </div>
