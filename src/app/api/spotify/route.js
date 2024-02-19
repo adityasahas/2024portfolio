@@ -29,9 +29,11 @@ export async function GET(req, res) {
     {
       headers: { Authorization: `Bearer ${accessToken}` },
       next: { revalidate: 0 },
-      cache: "no-cache",
     }
   );
+if (playbackResponse.status === 204) {
+    return NextResponse.json({currentlyPlaying: false});
+  }
 
   const playbackState = await playbackResponse.json();
   return NextResponse.json(playbackState);

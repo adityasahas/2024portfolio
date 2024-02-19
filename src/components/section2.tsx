@@ -26,11 +26,18 @@ export default function NameAndGitandSpotify() {
 
   const fetchPlaybackState = async () => {
     setIsLoading(true);
-    const response = await fetch("/api/spotify", { cache: "no-cache" });
+    const response = await fetch("/api/spotify");
 
     const data = await response.json();
+    
+    if (data.currentlyPlaying === false) {
+      setPlaybackState(null);
+      setIsLoading(false);
+      return;
+    }
 
     setPlaybackState(data);
+    console.log(data);
     setProgressPercentage((data.progress_ms / data.item.duration_ms) * 100);
   };
 
@@ -54,7 +61,7 @@ export default function NameAndGitandSpotify() {
           }));
         }
       }
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [playbackState]);
@@ -152,7 +159,7 @@ export default function NameAndGitandSpotify() {
                 <Progress value={progressPercentage} className="mt-4" />
               </div>
             ) : (
-              <p>Loading Spotify playback state...</p>
+              <p>Not playing Spotify right now.</p>
             )}
           </div>
         </div>
