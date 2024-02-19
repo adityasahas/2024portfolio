@@ -31,8 +31,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${myFont.className} dark`}>
-      <body >
-        <div className="bg-black lowercase">
+      <body>
+        <div className="bg-black lowercase px-4 md:px-0">
           <Providers>
             <Navbar />
             {children}{" "}

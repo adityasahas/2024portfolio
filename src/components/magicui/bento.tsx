@@ -65,7 +65,6 @@ const BentoCard = ({
     >
       <Link href={href} isExternal showAnchorIcon>
         {cta}
-        {/* <ArrowRightIcon className="ml-2 h-4 w-4" /> */}
       </Link>
     </div>
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />

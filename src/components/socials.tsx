@@ -36,7 +36,7 @@ export default function Socials() {
       {socials.map((social, index, arr) => (
         <div
           key={social.name}
-          className={`px-4 py-4 bg-[#131315] rounded-3xl flex flex-row items-center gap-2 w-full ${
+          className={`px-4 py-4 transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] rounded-3xl flex flex-row items-center gap-2 w-full ${
             arr.length % 2 !== 0 && index === arr.length - 1 ? "col-span-2" : ""
           }`}
         >
