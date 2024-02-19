@@ -86,7 +86,7 @@ const features = [
     Icon: FaMoneyBill1Wave,
     name: "Effinity",
     description:
-      "Effinity is a student-run organization that aims to provide financial literacy to students across the globe.",
+      "Effinity is a startup that aims to provide financial literacy to students across the globe.",
     href: "https://effinity.ca",
     cta: "Learn more",
     background: <img className="absolute  opacity-60" />,
