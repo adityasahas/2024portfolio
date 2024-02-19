@@ -156,7 +156,22 @@ export default function NameAndGitandSpotify() {
                     </p>
                   </div>
                 </div>
-                <Progress value={progressPercentage} className="mt-4" />
+                {playbackState.is_playing === false && (
+                  <Progress
+                    value={0}
+                    className="mt-4"
+
+                    label="Paused"
+                  />
+                )
+                
+                }
+                {playbackState.is_playing === true && (
+                  <Progress
+                    value={progressPercentage}
+                    className="mt-4"
+                  />
+                )}
               </div>
             ) : (
               <p>Not playing Spotify right now.</p>
