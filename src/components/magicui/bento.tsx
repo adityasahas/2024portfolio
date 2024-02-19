@@ -29,6 +29,7 @@ const BentoCard = ({
   description,
   href,
   cta,
+  linkDisabled,
 }: {
   name: string;
   className: string;
@@ -37,6 +38,7 @@ const BentoCard = ({
   description: string;
   href: string;
   cta: string;
+  linkDisabled?: boolean;
 }) => (
   <div
     key={name}
@@ -60,10 +62,10 @@ const BentoCard = ({
 
     <div
       className={cn(
-        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+        "absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
       )}
     >
-      <Link href={href} isExternal showAnchorIcon>
+      <Link href={href} isExternal showAnchorIcon isDisabled={linkDisabled}>
         {cta}
       </Link>
     </div>

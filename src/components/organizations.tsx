@@ -18,10 +18,11 @@ const features = [
     name: "Opal",
     description:
       "opal.ink is a platform that lets you create and revise documents, with ai..",
-    href: "https://www.techoptimum.org",
+    href: "https://www.opal.ink",
     cta: "Learn more",
     background: <img className="absolute  opacity-60" />,
     className: "lg:row-start-1 lg:row-end-3 lg:col-start-2 lg:col-end-3",
+    linkDisabled: true,
   },
   {
     Icon: IoMdSchool,
@@ -47,7 +48,7 @@ const features = [
     background: (
       <img
         src="https://www.joinperceptify.com/promotional.png"
-        className="absolute  opacity-60"
+        className="absolute -top-3 opacity-60"
       />
     ),
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-4",
@@ -90,6 +91,7 @@ const features = [
     cta: "Learn more",
     background: <img className="absolute  opacity-60" />,
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-4 lg:row-end-5",
+    linkDisabled: true,
   },
 ];
 
