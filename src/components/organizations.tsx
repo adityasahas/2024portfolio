@@ -95,10 +95,15 @@ const features = [
 
 export async function Organizations1() {
   return (
-    <BentoGrid className="lg:grid-rows-3">
-      {features.map((feature) => (
-        <BentoCard key={feature.name} {...feature} />
-      ))}
-    </BentoGrid>
+    <>
+      <div className="bg-[#131315] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] rounded-xl max-w-6xl mx-auto mt-10 flex items-center justify-center">
+        <h1 className="text-4xl font-bold px-4 py-4">Organizations</h1>
+      </div>
+      <BentoGrid className="lg:grid-rows-3">
+        {features.map((feature) => (
+          <BentoCard key={feature.name} {...feature} />
+        ))}
+      </BentoGrid>
+    </>
   );
 }
