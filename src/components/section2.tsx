@@ -29,9 +29,6 @@ export default function NameAndGitandSpotify() {
     const response = await fetch("/api/spotify", { cache: "no-cache" });
 
     const data = await response.json();
-    if (!data || !data.item) {
-      throw new Error("Invalid data format");
-    }
 
     setPlaybackState(data);
     setProgressPercentage((data.progress_ms / data.item.duration_ms) * 100);

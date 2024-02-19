@@ -28,7 +28,7 @@ export async function GET(req, res) {
     "https://api.spotify.com/v1/me/player/currently-playing",
     {
       headers: { Authorization: `Bearer ${accessToken}` },
-      next: {revalidate: 0}
+      next: { revalidate: 1 },
     }
   );
 
