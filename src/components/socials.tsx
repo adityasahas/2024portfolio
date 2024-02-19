@@ -2,6 +2,8 @@ import React from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Link } from "@nextui-org/react";
+import { IoDocumentText } from "react-icons/io5";
+
 export default function Socials() {
   const socials = [
     {
@@ -28,6 +30,11 @@ export default function Socials() {
       name: "Email",
       url: "mailto:contact@adityasahas.tech",
       icon: MdEmail,
+    },
+    {
+      name: "Resume",
+      url: "/resume.pdf",
+      icon: IoDocumentText,
     },
   ];
 
