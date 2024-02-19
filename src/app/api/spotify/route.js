@@ -28,13 +28,15 @@ export async function GET(req, res) {
     "https://api.spotify.com/v1/me/player/currently-playing",
     {
       headers: { Authorization: `Bearer ${accessToken}` },
-      next: { revalidate: 0 },
+      // next: { revalidate: 0 },
+      cache: "no-store",
     }
   );
-if (playbackResponse.status === 204) {
-    return NextResponse.json({currentlyPlaying: false});
+  if (playbackResponse.status === 204) {
+    return NextResponse.json({ currentlyPlaying: false });
   }
 
   const playbackState = await playbackResponse.json();
   return NextResponse.json(playbackState);
 }
+export const dynamic = "force-dynamic";

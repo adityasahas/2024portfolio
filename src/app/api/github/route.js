@@ -11,6 +11,7 @@ export async function GET(req, res) {
       headers: {
         Authorization: `token ${token}`,
         Accept: "application/vnd.github.cloak-preview",
+        cache: "no-store",
       },
     }
   );
@@ -38,3 +39,4 @@ export async function GET(req, res) {
 
   return NextResponse.json(response);
 }
+export const dynamic = "force-dynamic";
