@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
-
+import { Analytics } from '@vercel/analytics/react';
 import localFont from "next/font/local";
 import { Providers } from "./providers";
 const myFont = localFont({
@@ -38,6 +38,7 @@ export default function RootLayout({
             {children}{" "}
           </Providers>
         </div>
+        <Analytics/>
       </body>
     </html>
   );
