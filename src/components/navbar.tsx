@@ -10,19 +10,19 @@ const Navbar = () => {
 
         <div className="flex space-x-4">
           <Link
-            href="/home"
+            href="/"
             className=" text-white py-2 px-4 rounded-lg hidden md:flex"
           >
             Home.
           </Link>
           <Link
-            href="/works"
+            href="/"
             className=" text-white py-2 px-4 rounded-lg hidden md:flex"
           >
             Works.
           </Link>
           <Link
-            href="/contact"
+            href="/"
             className=" text-white py-2 px-4 rounded-lg hidden md:flex"
           >
             Contact.
