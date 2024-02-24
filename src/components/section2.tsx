@@ -4,12 +4,49 @@ import React, { useState, useEffect } from "react";
 import { Image, Progress, Link } from "@nextui-org/react";
 import { FaGithub } from "react-icons/fa";
 import { SiSpotify } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiPython, SiJavascript, SiTensorflow, SiNumpy, SiAmazonaws } from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa";
+
 export default function NameAndGitandSpotify() {
   const [commit, setCommit] = useState(null);
   const [playbackState, setPlaybackState] = useState(null);
   const [progressPercentage, setProgressPercentage] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-
+  const skills = [
+    {
+      name: "Next.js",
+      icon: SiNextdotjs,
+    },
+    {
+      name: "Tailwind CSS",
+      icon: SiTailwindcss,
+    },
+    {
+      name: "Python",
+      icon: SiPython,
+    },
+    {
+      name: "JavaScript",
+      icon: SiJavascript,
+    },
+    {
+      name: "Node.js",
+      icon: FaNodeJs,
+    },
+    {
+      name: "Tensorflow",
+      icon: SiTensorflow,
+    },
+    {
+      name: "NumPy",
+      icon: SiNumpy,
+    },
+    {
+      name: "AWS",
+      icon: SiAmazonaws,
+    },
+  ];
+  
   useEffect(() => {
     fetch("/api/github")
       .then((res) => res.json())
@@ -29,7 +66,7 @@ export default function NameAndGitandSpotify() {
     const response = await fetch("/api/spotify");
 
     const data = await response.json();
-    
+
     if (data.currentlyPlaying === false) {
       setPlaybackState(null);
       setIsLoading(false);
@@ -68,17 +105,32 @@ export default function NameAndGitandSpotify() {
   return (
     <div className="max-w-6xl mx-auto mt-5">
       <div className="flex md:flex-row flex-col gap-8">
-        <div className="bg-[#131315] flex-grow rounded-xl p-6 transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
-          <h1 className="text-white text-3xl md:text-5xl">
-            aditya sahas,
-            <span className="text-[#8A8A93]  mt-2 ">
-              <br />
-              biryani enthusiast,
-              <br /> full-stack developer, <br />
-              and a startup founder.
-            </span>
-          </h1>
+        <div className=" flex flex-col md:w-1/2 w-full gap-8">
+          <div className="bg-[#131315] flex-grow rounded-xl p-6 transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
+            <h1 className="text-white text-3xl md:text-5xl">
+              aditya sahas,
+              <span className="text-[#8A8A93]  mt-2 ">
+                <br />
+                high schooler,
+                <br /> full-stack developer, <br />
+                and a startup founder.
+              </span>
+            </h1>
+          </div>
+          <div className="bg-[#131315] rounded-xl p-6 md:col-span-1 transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
+ 
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    {skills.map((skill) => (
+      <div key={skill.name} className="bg-[#131315] rounded-xl p-3 transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] flex items-center justify-center">
+        <skill.icon size={22} color="#FFF" />
+      </div>
+    ))}
+  </div>
+</div>
+
+
         </div>
+
 
         <div className="flex flex-col md:w-1/2 w-full gap-8">
           <div className="bg-[#131315] rounded-xl p-6 md:col-span-1 transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
@@ -134,7 +186,7 @@ export default function NameAndGitandSpotify() {
                   <Image
                     src={
                       playbackState.item.album.images &&
-                      playbackState.item.album.images.length > 0
+                        playbackState.item.album.images.length > 0
                         ? playbackState.item.album.images[0].url
                         : "/next.svg"
                     }
@@ -145,26 +197,25 @@ export default function NameAndGitandSpotify() {
                   />
 
                   <div className="ml-4">
-                    <p className="text-white">
-                      {playbackState.item.name} -{" "}
-                      {playbackState.item.artists
-                        .map((artist) => artist.name)
-                        .join(", ")}
+                    <p className="text-white text-2xl">
+                      {playbackState.item.name}
+
                     </p>
                     <p className="text-[#8A8A93]">
-                      {playbackState.item.album.name}
-                    </p>
+                      {playbackState.item.artists
+                        .map((artist) => artist.name)
+                        .join(", ")}                    </p>
                   </div>
                 </div>
                 {playbackState.is_playing === false && (
                   <Progress
                     value={0}
                     className="mt-4"
-
+                    size="sm"
                     label="Paused"
                   />
                 )
-                
+
                 }
                 {playbackState.is_playing === true && (
                   <Progress
