@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Image, Progress, Link } from "@nextui-org/react";
 import { FaGithub } from "react-icons/fa";
 import { SiSpotify } from "react-icons/si";
-import { SiNextdotjs, SiTailwindcss, SiPython, SiJavascript, SiTensorflow, SiNumpy, SiAmazonaws } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiPython, SiJavascript, SiTensorflow, SiNumpy, SiSupabase, SiAmazonaws } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 
 export default function NameAndGitandSpotify() {
@@ -38,15 +38,15 @@ export default function NameAndGitandSpotify() {
       icon: SiTensorflow,
     },
     {
-      name: "NumPy",
-      icon: SiNumpy,
+      name: "Supabase",
+      icon: SiSupabase,
     },
     {
       name: "AWS",
       icon: SiAmazonaws,
     },
   ];
-  
+
   useEffect(() => {
     fetch("/api/github")
       .then((res) => res.json())
@@ -118,15 +118,15 @@ export default function NameAndGitandSpotify() {
             </h1>
           </div>
           <div className="bg-[#131315] rounded-xl p-6 md:col-span-1 transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
- 
-  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    {skills.map((skill) => (
-      <div key={skill.name} className="bg-[#131315] rounded-xl p-3 transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] flex items-center justify-center">
-        <skill.icon size={22} color="#FFF" />
-      </div>
-    ))}
-  </div>
-</div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {skills.map((skill) => (
+                <div key={skill.name} className="bg-[#131315] rounded-xl p-2 transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] flex items-center justify-center">
+                  <skill.icon size={22} color="#FFF" />
+                </div>
+              ))}
+            </div>
+          </div>
 
 
         </div>
