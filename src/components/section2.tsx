@@ -219,7 +219,6 @@ export default function NameAndGitandSpotify() {
                   <Progress
                     value={0}
                     className="mt-4"
-                    size="sm"
                     label="Paused"
                   />
                 )}
