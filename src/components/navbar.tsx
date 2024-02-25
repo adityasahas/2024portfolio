@@ -22,7 +22,7 @@ const Navbar = () => {
             Works.
           </Link>
           <Link
-            href="/"
+            href="/contact"
             className=" text-white py-2 px-4 rounded-lg hidden md:flex"
           >
             Contact.
