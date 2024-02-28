@@ -12,11 +12,13 @@ export async function POST(req: Request) {
     }
     console.log("Request Body:", body);
     const { name, email, message } = body;
+    
+    const name_string_friend = name.replace(/\s/g, '').toLowerCase();
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-        from: "portfolio@adityasahas.tech",
+        from: `${name_string_friend}@adityasahas.tech`,
         to: "contact@adityasahas.tech",
         subject: `New Contact Form Submission from ${name}`,
         html: `<p><strong>Name:</strong> ${name}</p>
