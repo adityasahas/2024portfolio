@@ -10,19 +10,18 @@ import { IoMdSchool } from "react-icons/io";
 import { IoBarChart, IoRocket } from "react-icons/io5";
 import { MdGroups } from "react-icons/md";
 import { FaMoneyBill1Wave } from "react-icons/fa6";
-import { FaPencil } from "react-icons/fa6";
+import { FaPencil, FaCode } from "react-icons/fa6";
 
 const features = [
   {
-    Icon: FaPencil,
-    name: "Opal",
+    Icon: FaCode,
+    name: "Codin",
     description:
-      "opal.ink is a platform that lets you create and revise documents, with ai..",
-    href: "https://www.opal.ink",
+      "Supercharge your developer portfolio with real-world projects.",
+    href: "https://codin.app",
     cta: "Learn more",
     background: <img className="absolute  opacity-60" />,
     className: "lg:row-start-1 lg:row-end-3 lg:col-start-2 lg:col-end-3",
-    linkDisabled: true,
   },
   {
     Icon: IoMdSchool,
@@ -80,7 +79,7 @@ const features = [
         className="absolute opacity-60"
       />
     ),
-    className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-4",
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-4 lg:row-end-5",
   },
   {
     Icon: FaMoneyBill1Wave,
@@ -90,7 +89,7 @@ const features = [
     href: "https://effinity.ca",
     cta: "Learn more",
     background: <img className="absolute  opacity-60" />,
-    className: "lg:col-start-3 lg:col-end-3 lg:row-start-4 lg:row-end-5",
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-4",
     linkDisabled: true,
   },
 ];
