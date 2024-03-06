@@ -50,7 +50,6 @@ export default function Contact() {
 
     const validateEmail = (email) => {
         return email.match(
-            // Simplified regex for example purposes; consider a more robust validation
             /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
     };
