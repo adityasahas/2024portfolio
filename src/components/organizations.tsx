@@ -90,14 +90,13 @@ const features = [
     cta: "Learn more",
     background: <img className="absolute  opacity-60" />,
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-4",
-    linkDisabled: true,
   },
 ];
 
 export async function Organizations1() {
   return (
     <>
-      <div className="bg-[#131315] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] rounded-xl max-w-6xl mx-auto mt-10 flex items-center justify-center">
+      <div className="bg-[#131315] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] rounded-xl max-w-6xl mx-auto mt-5 flex items-center justify-center">
         <h1 className="text-4xl font-bold px-4 py-4">Organizations.</h1>
       </div>
       <BentoGrid className="lg:grid-rows-3">

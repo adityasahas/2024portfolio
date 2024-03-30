@@ -92,7 +92,7 @@ export default function Contact() {
 
   return (
     <>
-      <div className="bg-[#131315] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] rounded-xl max-w-6xl mx-auto mt-10 flex flex-col md:flex-row">
+      <div className="bg-[#131315] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] rounded-xl max-w-6xl mx-auto mt-5 flex flex-col md:flex-row">
         <div className="flex flex-col md:w-1/2 w-full gap-8 p-6">
           <h1 className="text-white text-3xl font-bold">Contact</h1>
           <p className="text-gray-300">
