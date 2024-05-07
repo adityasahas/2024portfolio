@@ -15,12 +15,7 @@ const Navbar = () => {
           >
             Home.
           </Link>
-          <Link
-            href="/"
-            className=" text-white py-2 px-4 rounded-lg hidden md:flex"
-          >
-            Works.
-          </Link>
+       
           <Link
             href="/contact"
             className=" text-white py-2 px-4 rounded-lg hidden md:flex"
